@@ -15,7 +15,7 @@ Lamentablemente, este es el segundo repositorio creado, ya que el primero tuvimo
 # Integrantes
 
 - Martín Sobarzo @meshdako
-- Rodrigo Ubilla qRodrigoUbillaC
+- Rodrigo Ubilla @qRodrigoUbillaC
 - Cristobal Abarca @ubosednb
 - Rodrigo Mora @rmorapalta
 - Luis Rivas @LuisRivas1997
