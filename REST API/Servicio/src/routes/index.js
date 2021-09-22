@@ -2,70 +2,65 @@ const { Router, json } = require("express")
 const router = Router();
 
 router.get('/', (req, res) => {
-    res.json({ "Titulo": "Hola Mundo" });
+    res.json({ "Titulo": "API REST" });
 });
-
-// Consumiendo Nombre
 
 
 router.get('/nombre', (req, res) => {
+    
     var nombre = req.query.nombre;
-    var aux = nombre.split(" ");
-    console.log(aux);
-    for (let i = 0; i < aux.length; i++) {
-        for (let j = 0; j < aux[i].length; j++) {
-            if (aux[i][j] === '_') {
-                aux[i] = aux[i].replace('_', ' ');
-                console.log(aux[i][j]);
+    var aux1 = nombre.split(" ");
+    var contador = 0;
+    for (let i = 0; i < aux1.length; i++) {
+        for (let j = 0; j < aux1[i].length; j++) {
+            if (aux1[i][j] === '-') {
+                aux1[i]=aux1[i].replace('-',' ');
             }
-
-        }
-    }
-
-    if (aux.length <= 2) {
-        console.log("parametro mal ingresado :c");
-
-    } else {
-        if (aux.length >= 3) {
-            for (let i = 0, j = 1; i < (aux.length) - 2; i++, j++) {
-                console.log("Nombre " + j + ": ", aux[i]);
-            }
-            for (let i = (aux.length) - 2, j = 1; i < aux.length; i++, j++) {
-                console.log("Apellido " + j + ": ", aux[i]);
+            else{
+                contador++;
             }
         }
     }
-
     var json = {};
-
-
-    if (aux.length <= 2) {
-        res.json('Parametro mal ingresado');
-    } else {
-        if (aux.length >= 3) {
-            for (let i = 0, j = 1; i < (aux.length) - 2; i++, j++) {
-                json['Nombre ' + j] = aux[i];
-
-            }
-            json['Apellido Paterno'] = aux[aux.length - 2];
-            json['Apellido Materno'] = aux[aux.length - 1];
+    if(contador <=150){
+        if(aux1.length < 3){
+            res.json('El Estado de Chile exige un Nombre y Dos apellidos Minimo por persona');
         }
-
-        res.json(json);
+        else{
+            for(let i = 0, j = 1; i < aux1.length - 2; i++, j++){
+                json['Nombre ' + j] = " "+aux1[i];
+            }
+            json['Apellido Paterno'] = " "+aux1[aux1.length - 2];
+            json['Apellido Materno'] = " "+aux1[aux1.length - 1];
+            res.json(json);
+        }
     }
-
-
-
-
+    else{
+        res.json('Nombre no cumple con maximo de 150 caracteres impuesto por el Estado de Chile');
+    }
 })
 
 router.get('/rut', (req, res) => {
-
+   //recepcion y transformacion de datos
     var rutdv = req.query.rut;
-    console.log(rutdv[0]);
-    var div= rutdv%10;
-    var numero=rutdv/10;
-    numero=Math.trunc(numero);
+    var numero=Math.trunc(rutdv);
+    var div= (rutdv%1).toFixed(3);
+    if(div<0.1){ 
+      if(div==0.011){
+        div=11;
+      }
+      if(div==0.010){
+        div=10;
+      }
+    }else{
+        div=div*10;
+        div=Math.trunc(div);
+    }
+    
+    console.log("rut sin puntos o digto vericador= "+numero);
+    console.log("digito verificador (numero)= "+div);
+     
+    // calculo de dv
     var Multi=2
     var suma=0;
     while(numero>0){
@@ -77,22 +72,15 @@ router.get('/rut', (req, res) => {
       numero=numero/10;
       numero=Math.trunc(numero);
     }
-    
     var verificador = 11 - ((suma % 11)/1);
-
-        /*if (verificador == 10) {
-            res.json({ "rut": rutdv + "-" + "k" });
-        }else{
-            if(verificador==11){
-                res.json({ "rut": rutdv + "-" + "0" });
-            }else{
-                res.json({ "rut": rutdv + "-" + verificador });
-            }
-        }*/
+    
+    // respuesta
     if(verificador==div){
-        res.json({"rut":"true"});
+        console.log("verificacion = true");
+        res.json({"rut":"Correcto: el rut y digito verificador ingresados corresponden"});
     }else{
-        res.json({"rut":"f"+" "+rutdv + "-" + div})
+        console.log("verificacion = false");
+        res.json({"rut":"Incorrecto: dado al rut ingresado el digito verificador deberia ser ="+verificador});
     }
 
 })
