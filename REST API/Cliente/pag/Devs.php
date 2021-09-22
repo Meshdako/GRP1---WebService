@@ -8,7 +8,15 @@
    </style>
     <title>API Rest</title>
 </head>
-<body >
+<style>
+body {
+  background-image: url('../img/devs/devsback.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<body>
 
 <header>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-info">
@@ -29,29 +37,32 @@
 </nav>
 
 <h1 class="text-center mt-5 mb-5">
-  Miembros de 
+  Miembros del grupo Nº1 
 </h1>
+<h2 class="text-center mt-5 mb-5">
+  Komodo Crew
+</h2>
 
 <div class="row mx-5">
   <div class="col">
-   <img src="..\img\pic_trulli.jpg" alt="xd" class="rounded-circle" width="150" height="150">
-   <p>miembro 1</p>
+   <img src="..\img\devs\mono2.jpg" alt="slave1" class="rounded-circle mx-auto d-block" width="150" height="150">
+   <h5 class="text-centrer mt-3">Martin Andrés Sobarzo Huerta</h5>
   </div>
   <div class="col">
-   <img src="..\img\pic_trulli.jpg" alt="xd" class="rounded-circle" width="150" height="150">
-   <p>miembro 2</p>
+   <img src="..\img\devs\mono1.jpg" alt="slave2" class="rounded-circle mx-auto d-block" width="150" height="150">
+   <h5 class="text-centrer mt-3">Rodrigo Sebastian Mora Palta</h5>
   </div>
   <div class="col">
-   <img src="..\img\pic_trulli.jpg" alt="xd" class="rounded-circle" width="150" height="150">
-   <p>miembro 3</p>
+   <img src="..\img\devs\mono3.jpg" alt="slave3" class="rounded-circle mx-auto d-block" width="150" height="150">
+   <h5 class="text-centrer mt-3">Cristobal Ignacio Abarca Abarzúa</h5>
   </div>
   <div class="col">
-   <img src="..\img\pic_trulli.jpg" alt="xd" class="rounded-circle" width="150" height="150">
-   <p>miembro 4</p>
+   <img src="..\img\devs\mono4.jpg" alt="slave4" class="rounded-circle mx-auto d-block" width="150" height="150">
+   <h5 class="text-centrer mt-3">Luis Felipe Osvaldo Rivas Sanchez</h5>
   </div>
   <div class="col">
-   <img src="..\img\pic_trulli.jpg" alt="xd" class="rounded-circle" width="150" height="150">
-   <p>Rodrigo Andrés Ubilla Castro</p>
+   <img src="..\img\devs\mono5.jpg" alt="slave5" class="rounded-circle mx-auto d-block" width="150" height="150">
+   <h5 class="text-centrer mt-3">Rodrigo Andrés Ubilla Castro</h5>
   </div>
 </div>
 

@@ -5,7 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-   </style>
+   <style> 
+    body {
+    background-image: url('../img/rut/rutback.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    } 
+  </style>
     <title>API Rest</title>
 </head>
 <body >
@@ -30,27 +37,22 @@
 
 
 <div class="container">
-<h1 class="text-center mt-5 mb-5">Calculo del Digito Verificador (RUT Chileno)</h1>
+<h1 class="text-center mt-5 mb-5">VALIDADOR DÍGITO VERIFICADOR</h1>
 <h5 class="mb-4">Instructivo de Uso</h5>
-<p>- Al ingresar un numero recuerde <strong>confirmar</strong> los datos primero, para luego desplegarlos con el boton <strong>Mostrar Datos</strong>.</p>
-<p>- Recuerde que al ingresar un rut es en <strong>formato chileno</strong>, sin guion ni puntos.</p> 
-<p>- No se aceptan numeros negativos ni letras, ya que si lo hace le aparecera <strong>Parametro Invalido</strong>.</p>
-<h5 class="text-center mt-5">Ingrese a continuacion su rut sin digito verficador:</h5>
-
 <form method="POST" action="rut.php">
 <div class="form-group">
-    <input type="text" class="form-control" name="rutD" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ejemplo: 19717521">
-    <input type="text" class="form-control" name="div" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder="Ejemplo: 1971752">
+    <label for="fname">Rut sin puntos :</label><br>
+    <input type="number" class="form-control" name="rutD" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ejemplo: 18295265">
+    <label for="fname">Digito verificador:</label><br>
+    <input type="text" class="form-control" name="div" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder="Ejemplo: 6">
     <button class="button float-right btn btn-info mt-1"> Confirmar</button>    
 </div>
-
 </form>
 </div>
 
 
 <div class="container d-flex justify-content-center my-5">
 <button type="button" class="button btn btn-info mt-4" data-toggle="modal" data-target="#modal1">Mostrar Resultados</button>
-
     <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -64,18 +66,27 @@
           <p>Su RUT con Digito Verficador es el siguiente:</p>
 
           <?php 
-          
           $rutdiv= $_POST['rutD'];
           $div= $_POST['div'];
-           if ($rutdiv > 0){
-            $url="http://localhost:3000/rut?rut=" . $xd;
+          if ($rutdiv > 0){
+            
+            if($div=="k"){
+              $x=10/1000;
+            }else{
+              if($div=="0"){
+                $x=11/1000;
+              }else{
+                $x=$div/10;
+                
+              }
+            }  
+            $url="http://localhost:3000/rut?rut=" . $rutdiv+$x ;
             $data = json_decode(file_get_contents($url), true);
             print_r($data['rut']);
 
           } else {
             echo 'Parametro invalido';
           }
-
           ?>
           
           </div>
@@ -85,10 +96,6 @@
           </div>
         </div>
       </div>
-
-
-
-
 </div>
 
 
