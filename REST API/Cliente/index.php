@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
-  /* Make the image fully responsive */
     .carousel-inner img {
     width: 100%;
     height: 100%;
+    }
+    body {
+    background-image: url('img/indexback.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     }
    </style>
     <title>API Rest</title>
@@ -52,22 +57,15 @@
     </ul>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="img\a.png" alt="Chicago" width="250" height="250">
+        <img src="img\nombre.png" alt="Chicago">
       <div class="carousel-caption">
         <div class="row">
           <div class="col">
               <h1>“Split” Nombre Propio:</h1>
-              <p>El método recibira un nombre completo; asumiendo que siempre vienen primero los nombres y luego los apellidos, considerando que una persona puede tener uno o más nombres. El método devolvera una estructura jerárquica como la descrita a continuación:</p>
-              <p>• Nombres</p>
-              <p>o Nombre 1</p>
-              <p>o Nombre 2</p>
-              <p>o …</p>
-              <p>• Apellidos</p>
-              <p>o Apellido paterno</p>
-              <p>o Apellido Materno</p>
+              <p>El método recibira un nombre completo; asumiendo que siempre vienen primero los nombres y luego los apellidos, considerando que una persona puede tener uno o más nombres.</p>
           </div> 
           <div class="col">
-              <a href="pag\Nombre.php" type="button" class="btn btn-info btn-lg" style="justify-content: center;">Usar</a>
+              <a href="pag\Nombre.php" type="button" class="btn btn-info btn-lg" style="justify-content: center;">Usar Método</a>
           </div>
         </div>
       </div>
@@ -75,15 +73,15 @@
       
       </div>
       <div class="carousel-item">
-        <img src="img\b.png" alt="Los Angeles" width="250" height="250">
+        <img src="img\rut.png" alt="Los Angeles">
         <div class="carousel-caption">
         <div class="row">
           <div class="col">
               <h1>Validador Dígito Verificador:</h1>
-              <p>El método debe recibir la parte entera de un rut y un dígito verificador (por ejemplo 12345678; K) como campos separados y devolver como respuesta un indicador de si el dígito verificador entregado es o no correcto para el rut en cuestión (considerar algoritmo de dígito verificador usado en Chile).</p>
+              <p>El método debe recibir la parte entera de un rut y un dígito verificador como campos separados y devolver como respuesta un indicador de si el dígito verificador entregado es o no correcto para el rut en cuestión (se utiliza el sistema Chileno).</p>
           </div> 
           <div class="col">
-              <a href="pag\Rut.php" type="button" class="btn btn-info btn-lg" style="justify-content: center;">Usar</a>
+              <a href="pag\Rut.php" type="button" class="btn btn-info btn-lg" style="justify-content: center;">Usar Método</a>
           </div>
         </div>
       </div>   
