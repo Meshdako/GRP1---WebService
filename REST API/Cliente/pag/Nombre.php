@@ -26,22 +26,24 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="..\index.php">inicio</a>
+        <a class="nav-link" href="..\index.php">Inicio</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="Devs.php">desarrolladores</a>
+        <a class="nav-link" href="Devs.php">Desarrolladores</a>
         </li>      
     </ul>
   </div>
 </nav>
 
 <div class="container">
-<h1 class="text-center mt-5 mb-5">Nombre Completo</h1>
-<h5 class="mb-4">Instructivo de Uso</h5>
+<h1 class="text-center mt-5 mb-5">“Split” Nombre Propio:</h1>
+<h5 class="mb-4">Instrucciones</h5>
+<p> - Ingrese un nombre completo, debe tener en cuenta que el o los nombres van primero y que según la ley chilena los apellidos siempre son dos e irán al final del mismo. </p>
+<p> - Otro punto a tener en consideración es que si presenta un apellido o nombre que sea compuesto, vale decir <strong>Del Carmen, Plaza de los Reyes, Ladrón de Guevara, Casas-Cordero</strong>, etc. A menos que este ya contenga un guion explicito como es el caso de <strong>Casas-Cordero</strong>, debe de ingresar el nombre completo de la siguiente manera: "María Helena De León Cáceres: <strong>María Helena De-León Cáceres</strong>".</p>
 <form method="POST" action="nombre.php">
 <div class="form-group">
     <label for="Nombre Completo">Nombre Completo</label>
-    <input type="text" class="form-control" name="nombre1" aria-describedby="ejemploNombre" placeholder="Ejemplo: Andres Alejandro Del_Carmen Salazar">
+    <input type="text" class="form-control" name="nombre1" aria-describedby="ejemploNombre" placeholder="Ejemplo: María Helena De-León Caceres ">
     <button class="float-right btn btn-info mt-1">Confirmar</button>
     
   </div>
@@ -60,8 +62,6 @@
              </button>
           </div>
           <div class="modal-body text-center">
-          <p>Su nombre ordenado es el siguiente:</p>
-
           <?php 
           
           $nombreCO1= $_POST['nombre1'];

@@ -27,10 +27,10 @@ body {
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="..\index.php">inicio</a>
+        <a class="nav-link" href="..\index.php">Inicio</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">desarrolladores <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Desarrolladores <span class="sr-only">(current)</span></a>
       </li>      
     </ul>
   </div>
@@ -45,7 +45,7 @@ body {
 
 <div class="row mx-5">
   <div class="col">
-   <img src="..\img\devs\mono2.jpg" alt="slave1" class="rounded-circle mx-auto d-block" width="150" height="150">
+   <img src="..\img\devs\mono2.jpeg" alt="slave1" class="rounded-circle mx-auto d-block" width="150" height="150">
    <h5 class="text-centrer mt-3">Martin Andrés Sobarzo Huerta</h5>
   </div>
   <div class="col">
@@ -53,11 +53,11 @@ body {
    <h5 class="text-centrer mt-3">Rodrigo Sebastian Mora Palta</h5>
   </div>
   <div class="col">
-   <img src="..\img\devs\mono3.jpg" alt="slave3" class="rounded-circle mx-auto d-block" width="150" height="150">
+   <img src="..\img\devs\mono3.jfif" alt="slave3" class="rounded-circle mx-auto d-block" width="150" height="150">
    <h5 class="text-centrer mt-3">Cristobal Ignacio Abarca Abarzúa</h5>
   </div>
   <div class="col">
-   <img src="..\img\devs\mono4.jpg" alt="slave4" class="rounded-circle mx-auto d-block" width="150" height="150">
+   <img src="..\img\devs\mono4.jfif" alt="slave4" class="rounded-circle mx-auto d-block" width="150" height="150">
    <h5 class="text-centrer mt-3">Luis Felipe Osvaldo Rivas Sanchez</h5>
   </div>
   <div class="col">

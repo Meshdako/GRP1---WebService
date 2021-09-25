@@ -26,10 +26,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="..\index.php">inicio</a>
+        <a class="nav-link" href="..\index.php">Inicio</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="Devs.php">desarrolladores</a>
+        <a class="nav-link" href="Devs.php">Desarrolladores</a>
       </li>      
     </ul>
   </div>
@@ -39,13 +39,20 @@
 <div class="container">
 <h1 class="text-center mt-5 mb-5">VALIDADOR DÍGITO VERIFICADOR</h1>
 <h5 class="mb-4">Instructivo de Uso</h5>
+<p>Debe ingresar un RUT sin puntos y sin el dígito verificador en la primera casilla y su dígito verificador en la segunda casilla, el método determinará si el RUT y su dígito verificador corresponden o no.</p>
 <form method="POST" action="rut.php">
 <div class="form-group">
     <label for="fname">Rut sin puntos :</label><br>
     <input type="number" class="form-control" name="rutD" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ejemplo: 18295265">
-    <label for="fname">Digito verificador:</label><br>
-    <input type="text" class="form-control" name="div" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder="Ejemplo: 6">
-    <button class="button float-right btn btn-info mt-1"> Confirmar</button>    
+    <div class="row">
+      <div class="col">
+      <label for="fname">Digito verificador:</label><br>
+      <input type="text" class="form-control" name="div" id="exampleInputEmail2" maxlength="1" aria-describedby="emailHelp1" placeholder="Ejemplo: 6" onkeypress="return ((event.charCode >= 48 && event.charCode <= 57)||(event.charCode==107))" >
+     </div>
+     <div class="col">
+      <button class="button float-right btn btn-info mt-4"> Confirmar</button>
+     </div>
+  </div>   
 </div>
 </form>
 </div>
@@ -57,13 +64,12 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Calculo del digito verificador</h5>
+          <h5 class="modal-title" id="exampleModalCenterTitle">Validación de dígito verificador.</h5>
              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
              </button>
           </div>
           <div class="modal-body text-center">
-          <p>Su RUT con Digito Verficador es el siguiente:</p>
 
           <?php 
           $rutdiv= $_POST['rutD'];

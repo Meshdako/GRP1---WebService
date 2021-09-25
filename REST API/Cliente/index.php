@@ -32,22 +32,21 @@
           <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="pag\Devs.php">desarrolladores</a>
+          <a class="nav-link" href="pag\Devs.php">Desarrolladores</a>
         </li>      
       </ul>
     </div>
   </nav>
 
   <div>
-  <h1 class="text-center mt-5" style="color:darkred">
+  <h1 class="text-center mt-5" style="color:WhiteSmoke;">
   Trabajo nº1
   </h1>
-  <h3 class="text-center mt-2" style="color:darkred">
+  <h3 class="text-center mt-2" style="color:WhiteSmoke;">
   Web Service API Rest
   </h3>
-  <p class="text-center mt-5 mb-5">
-  expliación
-  </p>
+  <h5 class="text-center mt-5" style="color:WhiteSmoke;">Durante el desarrollo de este proyecto se crearon los siguientes métodos en concordancia con lo pedido en el enunciado de la misma,</h5>
+  <h5 class="text-center mb-5" style="color:WhiteSmoke;">que serían los métodos de Split de Nombre Propio y Validador de Digito Verificador.</h5> 
   </div>
 
   <div id="demo" class="carousel slide" data-ride="carousel">
@@ -57,7 +56,7 @@
     </ul>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="img\nombre.png" alt="Chicago">
+        <img src="img\nombre.png" alt="nombre">
       <div class="carousel-caption">
         <div class="row">
           <div class="col">
@@ -73,7 +72,7 @@
       
       </div>
       <div class="carousel-item">
-        <img src="img\rut.png" alt="Los Angeles">
+        <img src="img\rut.png" alt="rut">
         <div class="carousel-caption">
         <div class="row">
           <div class="col">
