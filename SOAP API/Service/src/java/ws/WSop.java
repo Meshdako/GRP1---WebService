@@ -5,11 +5,9 @@
  */
 package ws;
 
-import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-import static org.apache.xml.security.keys.keyresolver.KeyResolver.length;
 
 /**
  *
@@ -62,9 +60,10 @@ public class WSop {
         //TODO write your implementation code here:
         
         String delimitadores= "[ .,;?!¡¿\'\"\\[\\]]+";
-        String[] Nombres = Nombre_Completo.split(delimitadores);;
         
-        return Nombres;
+        String[] Nombre = Nombre_Completo.split(delimitadores);
+        
+        return Nombre;
     }
 
 
