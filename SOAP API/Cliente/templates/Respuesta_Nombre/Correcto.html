@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <br>Nombres:
+    </p>
+    {% with messages = get_flashed_messages() %}
+        {% if LIST %}
+            <ul>
+                {% for lista in LIST %}
+                    <li>{{ lista }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <p>
+        <br>Apellidos:
+    </p>
+    {% with messages = get_flashed_messages() %}
+        {% if LIST2 %}
+            <ul>
+                {% for lista2 in LIST2 %}
+                    <li>{{ lista2 }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
