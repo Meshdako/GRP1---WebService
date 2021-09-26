@@ -26,12 +26,6 @@ public class WSop {
         boolean ToF = false;
         int DV = Digito;
                 
-        /* int DV = Character.getNumericValue(Digito);
-        
-        if(Digito == 'k'){
-            DV = 10;
-        }*/
-        
         if(DV == 0){
             DV = 11;
         }

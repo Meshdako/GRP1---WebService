@@ -55,24 +55,26 @@ def add_nombre():
     if request.method == 'POST':
         NAME = request.form['fullname']
         RESULT = cliente.service.Nombre(NAME)
+
+        #DIRECCIÓN
+        DIRECCION = '/Respuesta_Nombre/Correcto.html'
+
         #Se cuentan cuantos
         cont = len(RESULT)
         
         if cont == 1:
-            return render_template('/Respuesta_Nombre/Correcto.html', LIST = RESULT, LIST2 = {'NO HAY APELLIDOS'})
+            return render_template(DIRECCION, LIST = RESULT, LIST2 = {'NO HAY APELLIDOS'})
         elif cont == 2:
-            return render_template('/Respuesta_Nombre/Correcto.html', LIST = {RESULT[0]}, LIST2 = {RESULT[1]})
+            return render_template(DIRECCION, LIST = {RESULT[0]}, LIST2 = {RESULT[1]})
         else:
             NOMBRES = [RESULT[0]]
             i = 1
             while i < (cont - 2):
                 NOMBRES.append(RESULT[i])
                 print(i)
-                i = i + 1
-                
-
+                i = i + 1    
             APELLIDOS = [RESULT[cont - 2], RESULT[cont - 1]]
-            return render_template('/Respuesta_Nombre/Correcto.html', LIST = NOMBRES, LIST2 = APELLIDOS)
+            return render_template(DIRECCION, LIST = NOMBRES, LIST2 = APELLIDOS)
 
 if __name__ == '__main__':
     app.run(debug=True)
