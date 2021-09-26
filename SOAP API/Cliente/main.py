@@ -38,14 +38,17 @@ def add_rut():
         RUN = request.form['rutD']
         DIGITO = request.form['div']
         
+        #DIRECCION1
+        DIRECCION1 = '/Respuesta_Run/Correcto.html'
+
         if DIGITO == '12':
             return render_template('/Respuesta_Run/Vacio.html', DIV = 'No seleccionó una opcion')
         if DIGITO == '10':
             if cliente.service.RUT(RUN, DIGITO) == True:
-                return render_template('/Respuesta_Run/Correcto.html', DIV = 'K')
+                return render_template(DIRECCION1, DIV = 'K')
         else:
             if cliente.service.RUT(RUN, DIGITO) == True:
-                return render_template('/Respuesta_Run/Correcto.html', DIV = DIGITO)
+                return render_template(DIRECCION1, DIV = DIGITO)
             else:
                 return render_template('/Respuesta_Run/Incorrecto.html', DIV = DIGITO)
 
@@ -57,15 +60,15 @@ def add_nombre():
         RESULT = cliente.service.Nombre(NAME)
 
         #DIRECCIÓN
-        DIRECCION = '/Respuesta_Nombre/Correcto.html'
+        DIRECCION2 = '/Respuesta_Nombre/Correcto.html'
 
         #Se cuentan cuantos
         cont = len(RESULT)
         
         if cont == 1:
-            return render_template(DIRECCION, LIST = RESULT, LIST2 = {'NO HAY APELLIDOS'})
+            return render_template(DIRECCION2, LIST = RESULT, LIST2 = {'NO HAY APELLIDOS'})
         elif cont == 2:
-            return render_template(DIRECCION, LIST = {RESULT[0]}, LIST2 = {RESULT[1]})
+            return render_template(DIRECCION2, LIST = {RESULT[0]}, LIST2 = {RESULT[1]})
         else:
             NOMBRES = [RESULT[0]]
             i = 1
@@ -74,7 +77,7 @@ def add_nombre():
                 print(i)
                 i = i + 1    
             APELLIDOS = [RESULT[cont - 2], RESULT[cont - 1]]
-            return render_template(DIRECCION, LIST = NOMBRES, LIST2 = APELLIDOS)
+            return render_template(DIRECCION2, LIST = NOMBRES, LIST2 = APELLIDOS)
 
 if __name__ == '__main__':
     app.run(debug=True)
