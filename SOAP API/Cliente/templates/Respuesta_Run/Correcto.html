@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("{{url_for('static', filename='img/rut/rutback.png')}}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+    <title>API SOAP</title>
 </head>
 <body>
-    <h1>
-        CORRECTO!
-    </h1>
-    <p>
-        Tu dígito verificador {{DIV}} es correcto.
-    </p>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-info">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="dev">Desarrolladores</a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="m-0 row justify-content-center">
+            <div class="col-4 p-5 text-center" style="border-radius: 10px; background-color: white; margin: 20px">
+                <h1>
+                    CORRECTO!
+                </h1>
+                <p>
+                    Tu dígito verificador {{DIV}} es correcto.
+                </p>
+            </div>
+        </div>
+        <div class="m-0 row justify-content-center">
+            <a href="rut" type="button" class="btn btn-danger" style="justify-content: center;">Volver</a>
+        </div>
 </body>
 </html>

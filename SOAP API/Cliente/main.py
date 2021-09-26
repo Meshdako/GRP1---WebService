@@ -37,13 +37,17 @@ def add_rut():
     if request.method == 'POST':
         RUN = request.form['rutD']
         DIGITO = request.form['div']
-        print(RUN)
-        print(DIGITO)
-        print(cliente.service.RUT(RUN, DIGITO))
-        if cliente.service.RUT(RUN, DIGITO) == True:
-            return render_template('/Respuesta_Run/Correcto.html', DIV = DIGITO)
+        
+        if DIGITO == '12':
+            return render_template('/Respuesta_Run/Vacio.html', DIV = 'No seleccionó una opcion')
+        if DIGITO == '10':
+            if cliente.service.RUT(RUN, DIGITO) == True:
+                return render_template('/Respuesta_Run/Correcto.html', DIV = 'K')
         else:
-            return render_template('/Respuesta_Run/Incorrecto.html', DIV = DIGITO)
+            if cliente.service.RUT(RUN, DIGITO) == True:
+                return render_template('/Respuesta_Run/Correcto.html', DIV = DIGITO)
+            else:
+                return render_template('/Respuesta_Run/Incorrecto.html', DIV = DIGITO)
 
 #Se recibe el nombre completo para devolverlo a la página correspondiente.
 @app.route('/add_nombre', methods=['POST'])

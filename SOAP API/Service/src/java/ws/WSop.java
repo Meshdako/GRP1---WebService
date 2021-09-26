@@ -19,13 +19,21 @@ public class WSop {
      * Web service operation
      */
     @WebMethod(operationName = "RUT")
+    @SuppressWarnings("UnusedAssignment")
     public boolean RUT(@WebParam(name = "RUNwD") int RUNwD, @WebParam(name = "Digito") int Digito) {
         //TODO write your implementation code here:
         
         boolean ToF = false;
+        int DV = Digito;
+                
+        /* int DV = Character.getNumericValue(Digito);
         
-        if(Digito == 0){
-            Digito = 11;
+        if(Digito == 'k'){
+            DV = 10;
+        }*/
+        
+        if(DV == 0){
+            DV = 11;
         }
         
         //Cálculo de dígito verficador.
@@ -45,7 +53,7 @@ public class WSop {
         
         Dverificador = 11 - (suma % 11);
         
-        if(Dverificador == Digito){
+        if(Dverificador == DV){
             ToF = true;
         }
         

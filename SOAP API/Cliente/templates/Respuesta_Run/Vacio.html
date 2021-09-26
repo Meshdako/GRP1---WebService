@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
         body {
-            background-image: url("{{url_for('static', filename='img/nombre/nombreback.png')}}");
+            background-image: url("{{url_for('static', filename='img/rut/rutback.png')}}");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
         }
     </style>
-    <title>Nombre SOAP</title>
+    <title>API SOAP</title>
 </head>
 <body>
     <!-- BARRA DE NAVEGACIÓN -->
@@ -35,40 +36,20 @@
                 </div>
             </nav>
         </header>
-    <div class="m-0 row justify-content-center">
-        <div class="col-4 p-5 text-center" style="border-radius: 10px; background-color: white; margin: 20px">
-            <p>
-                <br><h3>Su nombre desglosado es el siguiente:</h3>
-            </p>
-            <p>
-                <br><h4>Nombres:</h4>
-            </p>
-            {% with messages = get_flashed_messages() %}
-                {% if LIST %}
-                    <ul>
-                        {% for lista in LIST %}
-                            <li><h5>{{ lista }}</h5></li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endwith %}
-
-            <p>
-                <br><h4>Apellidos:</h4>
-            </p>
-            {% with messages = get_flashed_messages() %}
-                {% if LIST2 %}
-                    <ul>
-                        {% for lista2 in LIST2 %}
-                            <li><h5>{{ lista2 }}</h5></li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endwith %}
+        <div class="m-0 row justify-content-center">
+            <div class="col-4 p-5 text-center" style="border-radius: 10px; background-color: white; margin: 20px">
+                <h1>
+                </h1>
+                <p>
+                    {{DIV}}
+                </p>
+                <p>
+                    Vuelve a intentarlo.
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="m-0 row justify-content-center">
-        <a href="nombre" type="button" class="btn btn-danger" style="justify-content: center;">Volver</a>
-    </div>
+        <div class="m-0 row justify-content-center">
+            <a href="rut" type="button" class="btn btn-danger" style="justify-content: center;">Volver</a>
+        </div>
 </body>
 </html>
