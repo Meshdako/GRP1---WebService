@@ -3,7 +3,7 @@
 **Repositorio online dedicado al trabajo #1 del ramo Redes y Comunicaciones, con el profesor Geraud.**
 Lamentablemente, este es el segundo repositorio creado, ya que el primero tuvimos problemas con un par de archivos y el nombre del mismo.
 
-![screenshot](KMD.png)
+![screenshot](KMD_Crew.png)
 
 # Asignatura
 
