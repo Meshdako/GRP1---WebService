@@ -57,9 +57,9 @@
         <div class="modal-content">
           <div class="modal-header">
           <h5 class="modal-title" id="exampleModalCenterTitle">Nombre Completo</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-             </button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body text-center">
           <?php 
@@ -75,8 +75,8 @@
           $data = json_decode(file_get_contents($url),true);
           foreach($data as $key => $value){
           echo $key . ":" . $value . "<br>";
-         }
-         } else{
+          }
+        } else{
           echo 'Parametro invalido';
         }
         ?>
