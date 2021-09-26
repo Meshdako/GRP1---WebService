@@ -46,23 +46,23 @@ body {
 <div class="row mx-5">
   <div class="col">
    <img src="..\img\devs\mono2.jpeg" alt="slave1" class="rounded-circle mx-auto d-block" width="150" height="150">
-   <h5 class="text-centrer mt-3">Martin Andrés Sobarzo Huerta</h5>
+   <h5 class="text-center mt-3">Martin Andrés Sobarzo Huerta</h5>
   </div>
   <div class="col">
    <img src="..\img\devs\mono1.jpg" alt="slave2" class="rounded-circle mx-auto d-block" width="150" height="150">
-   <h5 class="text-centrer mt-3">Rodrigo Sebastian Mora Palta</h5>
+   <h5 class="text-center mt-3">Rodrigo Sebastian Mora Palta</h5>
   </div>
   <div class="col">
    <img src="..\img\devs\mono3.jfif" alt="slave3" class="rounded-circle mx-auto d-block" width="150" height="150">
-   <h5 class="text-centrer mt-3">Cristobal Ignacio Abarca Abarzúa</h5>
+   <h5 class="text-center mt-3">Cristobal Ignacio Abarca Abarzúa</h5>
   </div>
   <div class="col">
    <img src="..\img\devs\mono4.jfif" alt="slave4" class="rounded-circle mx-auto d-block" width="150" height="150">
-   <h5 class="text-centrer mt-3">Luis Felipe Osvaldo Rivas Sanchez</h5>
+   <h5 class="text-center mt-3">Luis Felipe Osvaldo Rivas Sanchez</h5>
   </div>
   <div class="col">
    <img src="..\img\devs\mono5.jpg" alt="slave5" class="rounded-circle mx-auto d-block" width="150" height="150">
-   <h5 class="text-centrer mt-3">Rodrigo Andrés Ubilla Castro</h5>
+   <h5 class="text-center mt-3">Rodrigo Andrés Ubilla Castro</h5>
   </div>
 </div>
 

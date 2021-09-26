@@ -21,7 +21,6 @@ router.get('/nombre', (req, res) => {
             }
         }
     }
-    var json = {};
     if(contador <=150){
         if(aux1.length < 3){
             res.json('El Estado de Chile exige un Nombre y Dos apellidos Minimo por persona');
